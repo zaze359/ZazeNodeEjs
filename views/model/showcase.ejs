@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <%list.forEach(function (curData, index){%>
+        <%
+            var cActive=index===0? 'active':null;
+            console.log(cActive);
+            console.log(curData);
+        %>
+        <div class="col-md-4 col-xs-6">
+            <div class="showcase">
+                <div class="showcase_time">
+                    <span class="pull-right">
+                        <a href="<%curData.showcaseTagUrl%>" class=" text-center right"><%curData.showcaseTag%></a>
+                    </span>
+                    <% curData.showcaseTime%>
+                </div>
+                <div class="showcase_img">
+                    <img class="" src="<%curData.showcaseImg%>" alt="">
+                </div>
+                <div class="showcase_text">
+                    <h4>
+                        <a href="<%curData.showcaseTitleUrl%>"><%curData.showcaseTitle%></a>
+                    </h4>
+                    <div class="showcase_info"><%curData.showcaseInfo%></div>
+                </div>
+            </div>
+        </div>
+        <%});%>
+    </div>
+</div>

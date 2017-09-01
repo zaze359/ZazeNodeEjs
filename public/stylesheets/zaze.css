@@ -1,3 +1,38 @@
 .main-body {
     padding-top: 50px;
 }
+
+
+
+/*  showcase.css start */
+.showcase {
+    height: 345px;
+}
+.showcase a{
+    color: #888;
+    text-decoration: none;
+}
+.showcase_img img {
+    width: 100%;
+    height: auto;
+}
+
+.showcase h4 {
+    position: relative;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #686868;
+    font-weight: bold;
+    max-height: 40px;
+    overflow: hidden;
+    line-height: 20px;
+    padding-left: 15px;
+}
+
+.showcase .showcase_info{
+    color: #909090;
+    font-size: 12px;
+    overflow: hidden;
+    max-height: 57px;
+}
+/*  showcase.css end */
