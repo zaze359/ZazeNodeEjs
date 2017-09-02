@@ -4,13 +4,13 @@ var router = express.Router();
 
 var indexData = {
     title: "Express",
-    list: [{
+    showcaseList: [{
         "showcaseTime": "2017-09-01",
         "showcaseImg": "http://image.g-cores.com/f57d1439-bad1-4770-ae0a-79b65660cf43.jpg?x-oss-process=style/original_hs",
         "showcaseTag": "News",
         "showcaseTagUrl": "http://www.g-cores.com/categories/2",
         "showcaseTitle": "CEDEC AWARDS 2017塞尔达“一箭双雕”，坂口博信获特别奖",
-        "showcaseTitleUrl": "#",
+        "showcaseTitleUrl": "http://www.g-cores.com/articles/26950",
         "showcaseInfo": "只有来自同行的肯定，才是赤裸裸……呃，赞美"
     }, {
         "showcaseTime": "2017-09-01",
@@ -36,7 +36,7 @@ router.get('/html5', function (req, res) {
     res.render('html5.ejs', {title: 'HTML5-'})
 });
 
-var data = {listaaaa: [{"name": "张三", "age": 20}, {"name": "李四", "age": 21}]};
+var data = {list: [{"name": "张三", "age": 20}, {"name": "李四", "age": 21}]};
 router.get('/game', function (req, res) {
     res.render('game.ejs', data);
 });

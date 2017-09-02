@@ -4,12 +4,12 @@
     <th>年龄</th>
     </thead>
     <tbody>
-    <!--<%for(var i=0;i<list.length;i++){var u=list[i];%>-->
-    <!--<tr>-->
-        <!--<td><%=u.name%></td>-->
-        <!--<td><%=u.age%></td>-->
-    <!--</tr>-->
-    <!--<%}%>-->
+    <%for(var i=0;i<list.length;i++){var u=list[i];%>
+    <tr>
+        <td><%=u.name%></td>
+        <td><%=u.age%></td>
+    </tr>
+    <%}%>
 
     <%list.forEach(function (t) { %>
     <tr>

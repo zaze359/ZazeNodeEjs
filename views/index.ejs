@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><%= title %></title>
+    <title><%=title %></title>
     <% include inc_css.html %>
     <style>
         .carousel .item {
@@ -16,11 +16,11 @@
 <!--头部导航-->
 <% include model/nav.ejs %>
 <!-- 轮播模块 -->
-<div id="mainCarousel" class="carousel slide" data-ride="carousel">
+<div id="maincarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-        <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#mainCarousel" data-slide-to="1" class=""></li>
-        <li data-target="#mainCarousel" data-slide-to="2" class=""></li>
+        <li data-target="#maincarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#maincarousel" data-slide-to="1" class=""></li>
+        <li data-target="#maincarousel" data-slide-to="2" class=""></li>
     </ol>
     <div class="carousel-inner">
         <div class="item active">
@@ -39,21 +39,21 @@
             </a>
         </div>
     </div>
-    <a href="#mainCarousel" class="left carousel-control" data-slide="prev">
+    <a href="#maincarousel" class="left carousel-control" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left"></span>
     </a>
-    <a href="#mainCarousel" class="right carousel-control" data-slide="next">
+    <a href="#maincarousel" class="right carousel-control" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right"></span>
     </a>
 </div>
 
 
 <h1><%= title %></h1>
-<p>Welcome to <%= title %></p>
+<p>welcome to <%= title %></p>
 
 <%include model/showcase.ejs%>
 
-<div id="westDiv"
+<div id="westdiv"
      data-options="region:'west'"
      style="width: 200px;overflow: hidden;">
     <!--<jsp:include page="./jsp/layout/west.jsp"></jsp:include>-->
@@ -79,12 +79,12 @@
 <!--</div>-->
 <!--<jsp:include page="/jsp/model/login.jsp"></jsp:include>-->
 <!--<jsp:include page="/jsp/model/regist.jsp"></jsp:include>-->
-<!--<jsp:include page="/jsp/model/rePassword.jsp"></jsp:include>-->
+<!--<jsp:include page="/jsp/model/repassword.jsp"></jsp:include>-->
 </body>
 <% include inc_js.html %>
 <script type="text/javascript">
 //    设置轮播时间
-    $('#mainCarousel').carousel({
+    $('#maincarousel').carousel({
         interval: 3000
     })
 
@@ -98,12 +98,12 @@
                 "menuid": "11",
                 "menuname": "我的收藏",
                 "icon": "icon-add",
-                "url": "./jsp/model/myPages.jsp"
+                "url": "./jsp/model/mypages.jsp"
             }, {
                 "menuid": "12",
                 "menuname": "标签管理",
                 "icon": "icon-nav",
-                "url": "./jsp/model/myTags.jsp"
+                "url": "./jsp/model/mytags.jsp"
             }]
         }, {
             "menuid": "2",
@@ -113,12 +113,12 @@
                 "menuid": "21",
                 "menuname": "好友列表",
                 "icon": "icon-nav",
-                "url": "./jsp/model/myFriends.jsp"
+                "url": "./jsp/model/myfriends.jsp"
             }, {
                 "menuid": "22",
                 "menuname": "好友添加",
                 "icon": "icon-nav",
-                "url": "./jsp/model/addFriends.jsp"
+                "url": "./jsp/model/addfriends.jsp"
             }]
         }, {
             "menuid": "3",
@@ -128,12 +128,12 @@
                 "menuid": "31",
                 "menuname": "个人信息",
                 "icon": "icon-nav",
-                "url": "./jsp/model/myMsg.jsp"
+                "url": "./jsp/model/mymsg.jsp"
             }, {
                 "menuid": "32",
                 "menuname": "个人资料修改",
                 "icon": "icon-nav",
-                "url": "./jsp/model/user_reMsg.jsp"
+                "url": "./jsp/model/user_remsg.jsp"
             }]
         }, {
             "menuid": "4",
@@ -143,31 +143,31 @@
                 "menuid": "41",
                 "menuname": "我发表的评论",
                 "icon": "icon-nav",
-                "url": "./jsp/model/myDiscuss.jsp"
+                "url": "./jsp/model/mydiscuss.jsp"
             }, {
                 "menuid": "42",
                 "menuname": "对我的评论",
                 "icon": "icon-nav",
-                "url": "./jsp/model/otherDiscuss.jsp"
+                "url": "./jsp/model/otherdiscuss.jsp"
             }]
         }]
     };
     $(function () {
         $.ajax({
-            url: 'user_getMyInfo.action',
+            url: 'user_getmyinfo.action',
             success: function (data) {
-                var d = $.parseJSON(data);
+                var d = $.parsejson(data);
                 if (d != null) {
-                    $('#loginMsg').empty();
-                    var userMsg = "";
-                    userMsg += '<div>欢迎 ' + d.username + ' </div>';
-                    $('#loginMsg').append(userMsg);
-                    $('#rePwdDiv').show();
+                    $('#loginmsg').empty();
+                    var usermsg = "";
+                    usermsg += '<div>欢迎 ' + d.username + ' </div>';
+                    $('#loginmsg').append(usermsg);
+                    $('#repwddiv').show();
                     //显示导航功能 绑定双击 及右键 。
-                    InitLeftMenu();
+                    initleftmenu();
                     $.parser.parse($('#acc'));
-                    tabClose();
-                    tabCloseEven();
+                    tabclose();
+                    tabcloseeven();
                 }
             }
         });
