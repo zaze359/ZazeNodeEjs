@@ -7,14 +7,15 @@ var indexData = {
     carouselList: [
         {
             "carouselImg": "/images/1.png",
+            "carouselUrl": "/android"
+        }, {
+            "carouselImg": "/images/2.png",
             "carouselUrl": ""
         }, {
-            "carouselImg": "/images/2.png"
-        }, {
-            "carouselImg": "/images/3.png"
+            "carouselImg": "/images/3.png",
+            "carouselUrl": ""
         }
     ],
-
     showcaseList: [{
         "showcaseTime": "2017-09-01",
         "showcaseImg": "http://image.g-cores.com/f57d1439-bad1-4770-ae0a-79b65660cf43.jpg?x-oss-process=style/original_hs",
