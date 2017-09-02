@@ -1,17 +1,37 @@
-.main-body {
-    padding-top: 50px;
+
+:root {
+    --nav-height: 50px;
 }
 
+/* -------------------------------------------------------- */
 
+.main-body {
+    padding-top: var(--nav-height);
+}
 
-/*  showcase.css start */
+/* --------------------------------------------------------nav start */
+
+nav {
+    background-color: rgba(255, 255, 255, 0.9);
+    height: var(--nav-height);
+}
+
+.navbar-nav a {
+    color: #888;
+}
+
+/* --------------------------------------------------------nav end */
+
+/* --------------------------------------------------------showcase.css start */
 .showcase {
     height: 345px;
 }
-.showcase a{
+
+.showcase a {
     color: #888;
     text-decoration: none;
 }
+
 .showcase_img img {
     width: 100%;
     height: auto;
@@ -29,10 +49,11 @@
     padding-left: 15px;
 }
 
-.showcase .showcase_info{
+.showcase .showcase_info {
     color: #909090;
     font-size: 12px;
     overflow: hidden;
     max-height: 57px;
 }
-/*  showcase.css end */
+
+/* --------------------------------------------------------showcase.css end */
