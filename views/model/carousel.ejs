@@ -10,8 +10,8 @@
         <% carouselList.forEach(function (data, number) { %>
         <% var cActive = number === 0 ? 'active' : null; %>
         <div class="item <%= cActive %>">
-            <a href="<%=data.carouselUrl%>">
-                <img src="<%=data.carouselImg%>" alt="">
+            <a href="<%= data.carouselUrl %>">
+                <img src="<%= data.carouselImg %>" alt="">
             </a>
         </div>
         <% }); %>

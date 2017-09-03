@@ -11,7 +11,7 @@
 
 /* --------------------------------------------------------nav start */
 
-nav {
+.navbar {
     background-color: rgba(255, 255, 255, 0.9);
     height: var(--nav-height);
 }

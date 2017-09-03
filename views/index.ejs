@@ -15,12 +15,21 @@
 </head>
 <body class="main-body">
 <!-- 导航 -->
-<% include model/nav.ejs %>
+<nav>
+    <% include model/nav.ejs %>
+</nav>
+
 <!-- 轮播模块 -->
-<% include model/carousel.ejs %>
+<div class="">
+    <% include model/carousel.ejs %>
+</div>
+
 <!--展示页模块-->
-<% include model/showcase.ejs %>
-<!---->
+<div>
+    <% include model/showcase.ejs %>
+</div>
+
+
 <h1><%= title %></h1>
 <p>welcome to <%= title %></p>
 
