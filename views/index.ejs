@@ -15,27 +15,21 @@
 </head>
 <body class="main-body">
 <!-- 导航 -->
-<nav>
+<div>
     <% include model/nav.ejs %>
-</nav>
-
+</div>
 <!-- 轮播模块 -->
 <div class="">
     <% include model/carousel.ejs %>
 </div>
-
 <!--展示页模块-->
 <div>
     <% include model/showcase.ejs %>
 </div>
-
-
-<h1><%= title %></h1>
-<p>welcome to <%= title %></p>
-
-<footer>
+<!--底部-->
+<div>
     <% include model/footer.ejs %>
-</footer>
+</div>
 
 <!--<div id="mm" class="easyui-menu" style="width:150px;">-->
 <!--<div id="mm-tabclose">关闭</div>-->
@@ -50,97 +44,100 @@
 <!--<jsp:include page="/jsp/model/login.jsp"></jsp:include>-->
 <!--<jsp:include page="/jsp/model/regist.jsp"></jsp:include>-->
 <!--<jsp:include page="/jsp/model/repassword.jsp"></jsp:include>-->
-</body>
-<% include inc_js.html %>
-<script type="text/javascript">
-    //    设置轮播时间
-    $('#maincarousel').carousel({
-        interval: 3000
-    })
+<div>
+    <% include inc_js.html %>
+    <script type="text/javascript">
+        //    设置轮播时间
+        $('#maincarousel').carousel({
+            interval: 3000
+        })
 
 
-    var _menus = {
-        "menus": [{
-            "menuid": "1",
-            "icon": "icon-sys",
-            "menuname": "收藏首页",
+        var _menus = {
             "menus": [{
-                "menuid": "11",
-                "menuname": "我的收藏",
-                "icon": "icon-add",
-                "url": "./jsp/model/mypages.jsp"
+                "menuid": "1",
+                "icon": "icon-sys",
+                "menuname": "收藏首页",
+                "menus": [{
+                    "menuid": "11",
+                    "menuname": "我的收藏",
+                    "icon": "icon-add",
+                    "url": "./jsp/model/mypages.jsp"
+                }, {
+                    "menuid": "12",
+                    "menuname": "标签管理",
+                    "icon": "icon-nav",
+                    "url": "./jsp/model/mytags.jsp"
+                }]
             }, {
-                "menuid": "12",
-                "menuname": "标签管理",
-                "icon": "icon-nav",
-                "url": "./jsp/model/mytags.jsp"
-            }]
-        }, {
-            "menuid": "2",
-            "icon": "icon-sys",
-            "menuname": "我的好友",
-            "menus": [{
-                "menuid": "21",
-                "menuname": "好友列表",
-                "icon": "icon-nav",
-                "url": "./jsp/model/myfriends.jsp"
+                "menuid": "2",
+                "icon": "icon-sys",
+                "menuname": "我的好友",
+                "menus": [{
+                    "menuid": "21",
+                    "menuname": "好友列表",
+                    "icon": "icon-nav",
+                    "url": "./jsp/model/myfriends.jsp"
+                }, {
+                    "menuid": "22",
+                    "menuname": "好友添加",
+                    "icon": "icon-nav",
+                    "url": "./jsp/model/addfriends.jsp"
+                }]
             }, {
-                "menuid": "22",
-                "menuname": "好友添加",
-                "icon": "icon-nav",
-                "url": "./jsp/model/addfriends.jsp"
-            }]
-        }, {
-            "menuid": "3",
-            "icon": "icon-sys",
-            "menuname": "我的设置",
-            "menus": [{
-                "menuid": "31",
-                "menuname": "个人信息",
-                "icon": "icon-nav",
-                "url": "./jsp/model/mymsg.jsp"
+                "menuid": "3",
+                "icon": "icon-sys",
+                "menuname": "我的设置",
+                "menus": [{
+                    "menuid": "31",
+                    "menuname": "个人信息",
+                    "icon": "icon-nav",
+                    "url": "./jsp/model/mymsg.jsp"
+                }, {
+                    "menuid": "32",
+                    "menuname": "个人资料修改",
+                    "icon": "icon-nav",
+                    "url": "./jsp/model/user_remsg.jsp"
+                }]
             }, {
-                "menuid": "32",
-                "menuname": "个人资料修改",
-                "icon": "icon-nav",
-                "url": "./jsp/model/user_remsg.jsp"
+                "menuid": "4",
+                "icon": "icon-sys",
+                "menuname": "我的网评",
+                "menus": [{
+                    "menuid": "41",
+                    "menuname": "我发表的评论",
+                    "icon": "icon-nav",
+                    "url": "./jsp/model/mydiscuss.jsp"
+                }, {
+                    "menuid": "42",
+                    "menuname": "对我的评论",
+                    "icon": "icon-nav",
+                    "url": "./jsp/model/otherdiscuss.jsp"
+                }]
             }]
-        }, {
-            "menuid": "4",
-            "icon": "icon-sys",
-            "menuname": "我的网评",
-            "menus": [{
-                "menuid": "41",
-                "menuname": "我发表的评论",
-                "icon": "icon-nav",
-                "url": "./jsp/model/mydiscuss.jsp"
-            }, {
-                "menuid": "42",
-                "menuname": "对我的评论",
-                "icon": "icon-nav",
-                "url": "./jsp/model/otherdiscuss.jsp"
-            }]
-        }]
-    };
-    $(function () {
-        $.ajax({
-            url: 'user_getmyinfo.action',
-            success: function (data) {
-                var d = $.parsejson(data);
-                if (d != null) {
-                    $('#loginmsg').empty();
-                    var usermsg = "";
-                    usermsg += '<div>欢迎 ' + d.username + ' </div>';
-                    $('#loginmsg').append(usermsg);
-                    $('#repwddiv').show();
-                    //显示导航功能 绑定双击 及右键 。
-                    initleftmenu();
-                    $.parser.parse($('#acc'));
-                    tabclose();
-                    tabcloseeven();
+        };
+        $(function () {
+            $.ajax({
+                url: 'user_getmyinfo.action',
+                success: function (data) {
+                    var d = $.parsejson(data);
+                    if (d != null) {
+                        $('#loginmsg').empty();
+                        var usermsg = "";
+                        usermsg += '<div>欢迎 ' + d.username + ' </div>';
+                        $('#loginmsg').append(usermsg);
+                        $('#repwddiv').show();
+                        //显示导航功能 绑定双击 及右键 。
+                        initleftmenu();
+                        $.parser.parse($('#acc'));
+                        tabclose();
+                        tabcloseeven();
+                    }
                 }
-            }
+            });
         });
-    });
-</script>
+    </script>
+</div>
+
+</body>
 </html>
