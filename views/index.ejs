@@ -3,15 +3,6 @@
 <head>
     <title><%= title %></title>
     <% include inc_css.html %>
-    <style>
-        .carousel .item {
-            height: 420px;
-        }
-
-        .carousel img {
-            width: 100%;
-        }
-    </style>
 </head>
 <body class="main-body">
 <!-- 导航 -->
@@ -19,12 +10,22 @@
     <% include model/nav.ejs %>
 </div>
 <!-- 轮播模块 -->
-<div class="">
+<div>
     <% include model/carousel.ejs %>
 </div>
 <!--展示页模块-->
 <div>
-    <% include model/showcase.ejs %>
+    <div class="container">
+        <div class="row">
+            <% showcaseList.forEach(function (showcaseValue, index) {
+                var cActive = index === 0 ? 'active' : null; %>
+            <div class="col-md-4 col-xs-6">
+                <% include model/showcase_item.ejs %>
+
+            </div>
+            <% }); %>
+        </div>
+    </div>
 </div>
 <!--底部-->
 <div>
@@ -49,73 +50,8 @@
     <script type="text/javascript">
         //    设置轮播时间
         $('#maincarousel').carousel({
-            interval: 3000
+            interval: 2000
         })
-
-
-        var _menus = {
-            "menus": [{
-                "menuid": "1",
-                "icon": "icon-sys",
-                "menuname": "收藏首页",
-                "menus": [{
-                    "menuid": "11",
-                    "menuname": "我的收藏",
-                    "icon": "icon-add",
-                    "url": "./jsp/model/mypages.jsp"
-                }, {
-                    "menuid": "12",
-                    "menuname": "标签管理",
-                    "icon": "icon-nav",
-                    "url": "./jsp/model/mytags.jsp"
-                }]
-            }, {
-                "menuid": "2",
-                "icon": "icon-sys",
-                "menuname": "我的好友",
-                "menus": [{
-                    "menuid": "21",
-                    "menuname": "好友列表",
-                    "icon": "icon-nav",
-                    "url": "./jsp/model/myfriends.jsp"
-                }, {
-                    "menuid": "22",
-                    "menuname": "好友添加",
-                    "icon": "icon-nav",
-                    "url": "./jsp/model/addfriends.jsp"
-                }]
-            }, {
-                "menuid": "3",
-                "icon": "icon-sys",
-                "menuname": "我的设置",
-                "menus": [{
-                    "menuid": "31",
-                    "menuname": "个人信息",
-                    "icon": "icon-nav",
-                    "url": "./jsp/model/mymsg.jsp"
-                }, {
-                    "menuid": "32",
-                    "menuname": "个人资料修改",
-                    "icon": "icon-nav",
-                    "url": "./jsp/model/user_remsg.jsp"
-                }]
-            }, {
-                "menuid": "4",
-                "icon": "icon-sys",
-                "menuname": "我的网评",
-                "menus": [{
-                    "menuid": "41",
-                    "menuname": "我发表的评论",
-                    "icon": "icon-nav",
-                    "url": "./jsp/model/mydiscuss.jsp"
-                }, {
-                    "menuid": "42",
-                    "menuname": "对我的评论",
-                    "icon": "icon-nav",
-                    "url": "./jsp/model/otherdiscuss.jsp"
-                }]
-            }]
-        };
         $(function () {
             $.ajax({
                 url: 'user_getmyinfo.action',

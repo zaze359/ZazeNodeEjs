@@ -67,14 +67,13 @@ var indexData = {
     }]
 };
 
-
 router.get('/', function (req, res, next) {
     res.render('index', indexData);
 });
 
 router.get('/android', function (req, res) {
-    // res.sendFile('../views/pages/bootstrap_collapse.html')
-    res.render('android.ejs')
+    res.render('android.ejs', {"appList":indexData.showcaseList})
+    // res.render('android.ejs', indexData.showcaseList);
 });
 
 router.get('/html5', function (req, res) {
