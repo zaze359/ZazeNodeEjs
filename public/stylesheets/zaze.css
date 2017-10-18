@@ -37,7 +37,6 @@
 /* --------------------------------------------------------carousel end */
 /* --------------------------------------------------------showcase.css start */
 .showcase {
-    height: 345px;
 }
 
 .showcase a {
@@ -45,10 +44,10 @@
     text-decoration: none;
 }
 
-/*.showcase_img img {*/
-    /*width: 100%;*/
-    /*height: auto;*/
-/*}*/
+.showcase_img img {
+    width: 100%;
+    height: auto;
+}
 
 .showcase h4 {
     position: relative;
