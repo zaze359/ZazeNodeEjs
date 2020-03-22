@@ -1,32 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <%include inc_css.html%>
-</head>
-<body class="main-body">
-    <%include model/nav.ejs%>
-    <div class="wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-sm-7">
-                    <div class="row">
-                        <% appList.forEach(function (showcaseValue, index) {
-                            var cActive = 'col-md-12';%>
-                            <div class="<%=cActive%>">
-                                <% include model/showcase_item.ejs %>
-                            </div>
-                        <%}); %>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-5">
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-<%include inc_js.html%>
+<%include defalut.ejs%>
 <script >
 </script>
 </html>

@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
-
+var showcase = require('../data/showcast');
 
 var indexData = {
-    title: "Express",
+    title: "ZZ Express",
     carouselList: [
         {
             "carouselImg": "/images/1.png",
@@ -15,6 +15,22 @@ var indexData = {
             "carouselImg": "/images/3.png",
             "carouselUrl": ""
         }
+    ],
+    games: [
+        showcase(
+            "明日方舟",
+            "https://ak.hypergryph.com/",
+            "《明日方舟》（《明日方舟Arknights》）是一款策略手游。你将作为罗德岛的一员,与罗德岛公开领导人阿米娅一同,雇佣人员频繁进入天灾影响后的高危地区,救助受难人群,处理矿石争端,以及对抗未知阻碍—— “罗德岛”的战术头脑,需要您的对策,请指引我们的航向。",
+            "wiki", "http://ak.mooncell.wiki/",
+            "https://ak.hypergryph.com/user/public/images/logo.png",
+// "http://ak.mooncell.wiki/ak.png"
+        ), showcase(
+            "黑色沙漠台服",
+            "https://www.tw.playblackdesert.com/",
+            "Pearl Abyss MMO的開始 黑色沙漠 Remastered，更加真實的冒險正在等待著您。超越真實感，與玩家共享感動的黑色沙漠。",
+            "官网", "https://www.tw.playblackdesert.com/",
+            "https://s1.pearlcdn.com/TW/contents/img/common/header_logo_tw.png",
+        )
     ],
     showcaseList: [{
         "showcaseTime": "2017-09-01",
@@ -72,18 +88,15 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/android', function (req, res) {
-    res.render('android.ejs', {"appList":indexData.showcaseList})
-    // res.render('android.ejs', indexData.showcaseList);
+    res.render('android.ejs', {"showcaseList": indexData.showcaseList})
 });
 
-router.get('/html5', function (req, res) {
-    res.render('html5.ejs', {title: 'HTML5-'})
+router.get('/front-end', function (req, res) {
+    res.render('front_end.ejs', {title: 'front-end'})
 });
 
-var data = {list: [{"name": "张三", "age": 20}, {"name": "李四", "age": 21}]};
 router.get('/game', function (req, res) {
-    res.render('game.ejs', data);
+    res.render('game.ejs', {games: indexData.games});
 });
-
 
 module.exports = router;

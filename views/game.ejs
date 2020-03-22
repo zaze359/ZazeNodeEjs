@@ -1,23 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<% var gameList = games %>
+//
 <table>
     <thead>
-    <th>姓名</th>
-    <th>年龄</th>
+    <th>title</th>
+    <th>info</th>
     </thead>
     <tbody>
-    <%for(var i=0;i<list.length;i++){var u=list[i];%>
+    <% for(var i = 0;i < gameList.length;i++){var u = gameList[i]; %>
     <tr>
-        <td><%=u.name%></td>
-        <td><%=u.age%></td>
+        <td><%= u.showcaseTitle %></td>
+        <td><%= u.showcaseInfo %></td>
     </tr>
-    <%}%>
+    <% } %>
 
-    <%list.forEach(function (t) { %>
-    <tr>
-        <td><%=t.name%></td>
-        <td><%=t.age%></td>
-    </tr>
-    <% })%>
+    <% gameList.forEach(function (t) { %>
+        <tr>
+            <td><%= t.showcaseTitle %></td>
+            <td><%= t.showcaseInfo %></td>
+        </tr>
+    <% }) %>
 
     </tbody>
 
 </table>
+<% var showcaseList = gameList %>
+<% include defalut.ejs %>
+<script>
+</script>
+</html>

@@ -7,11 +7,13 @@
         <%= showcaseValue.showcaseTime %>
     </div>
     <div class="showcase_img">
-        <img class="" src="<%= showcaseValue.showcaseImg %>" alt="">
+        <a href="<%= showcaseValue.showcaseTitleUrl %>" target="_blank">
+            <img class="" src="<%= showcaseValue.showcaseImg %>" alt="">
+        </a>
     </div>
     <div class="showcase_text">
         <h4>
-            <a href="<%= showcaseValue.showcaseTitleUrl %>"><%= showcaseValue.showcaseTitle %></a>
+            <a href="<%= showcaseValue.showcaseTitleUrl %>" target="_blank"><%= showcaseValue.showcaseTitle %></a>
         </h4>
         <div class="showcase_info"><%= showcaseValue.showcaseInfo %></div>
     </div>

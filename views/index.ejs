@@ -48,7 +48,7 @@
 <div>
     <% include inc_js.html %>
     <script type="text/javascript">
-        //    设置轮播时间
+        //  设置轮播时间
         $('#maincarousel').carousel({
             interval: 2000
         })
@@ -57,11 +57,11 @@
                 url: 'user_getmyinfo.action',
                 success: function (data) {
                     var d = $.parsejson(data);
-                    if (d != null) {
-                        $('#loginmsg').empty();
-                        var usermsg = "";
-                        usermsg += '<div>欢迎 ' + d.username + ' </div>';
-                        $('#loginmsg').append(usermsg);
+                    if (d !== null) {
+                        var loginmsg = $('#loginmsg')
+                        loginmsg.empty();
+                        var userMsg = '<div>欢迎 ' + d.username + ' </div>';
+                        loginmsg.append(userMsg);
                         $('#repwddiv').show();
                         //显示导航功能 绑定双击 及右键 。
                         initleftmenu();
