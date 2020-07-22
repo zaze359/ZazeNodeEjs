@@ -8,18 +8,18 @@
             <div class="showcase">
                 <div class="showcase_time">
                     <span class="pull-right">
-                        <a href="<%=curData.showcaseTagUrl%>" class=" text-center right"><%=curData.showcaseTag%></a>
+                        <a href="<%=curData.url%>" class=" text-center right"><%=curData.tags%></a>
                     </span>
-                    <%=curData.showcaseTime%>
+                    <%=curData.createTime%>
                 </div>
                 <div class="showcase_img">
-                    <img class="" src="<%=curData.showcaseImg%>" alt="">
+                    <img class="" src="<%=curData.imgUrl%>" alt="">
                 </div>
                 <div class="showcase_text">
                     <h4>
-                        <a href="<%=curData.showcaseTitleUrl%>"><%=curData.showcaseTitle%></a>
+                        <a href="<%=curData.url%>"><%=curData.title%></a>
                     </h4>
-                    <div class="showcase_info"><%=curData.showcaseInfo%></div>
+                    <div class="showcase_info"><%=curData.info%></div>
                 </div>
             </div>
         </div>

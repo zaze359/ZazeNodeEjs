@@ -4,22 +4,18 @@
 <% var gameList = games %>
 //
 <table>
-    <thead>
-    <th>title</th>
-    <th>info</th>
-    </thead>
     <tbody>
     <% for(var i = 0;i < gameList.length;i++){var u = gameList[i]; %>
     <tr>
-        <td><%= u.showcaseTitle %></td>
-        <td><%= u.showcaseInfo %></td>
+        <td><%= u.title %></td>
+        <td><%= u.info %></td>
     </tr>
     <% } %>
 
     <% gameList.forEach(function (t) { %>
         <tr>
-            <td><%= t.showcaseTitle %></td>
-            <td><%= t.showcaseInfo %></td>
+            <td><%= t.title %></td>
+            <td><%= t.info %></td>
         </tr>
     <% }) %>
 

@@ -1,20 +1,19 @@
 <div class="showcase">
     <div class="showcase_time">
-                    <span class="pull-right">
-                        <a href="<%= showcaseValue.showcaseTagUrl %>"
-                           class=" text-center right"><%= showcaseValue.showcaseTag %></a>
-                    </span>
-        <%= showcaseValue.showcaseTime %>
+        <span class="pull-right">
+            <a href="<%= showcaseValue.url%>" class=" text-center right"><%= showcaseValue.tags %></a>
+        </span>
+        <%= showcaseValue.createTime %>
     </div>
     <div class="showcase_img">
-        <a href="<%= showcaseValue.showcaseTitleUrl %>" target="_blank">
-            <img class="" src="<%= showcaseValue.showcaseImg %>" alt="">
+        <a href="<%= showcaseValue.url %>" target="_blank">
+            <img class="" src="<%= showcaseValue.imgUrl %>" alt="">
         </a>
     </div>
     <div class="showcase_text">
         <h4>
-            <a href="<%= showcaseValue.showcaseTitleUrl %>" target="_blank"><%= showcaseValue.showcaseTitle %></a>
+            <a href="<%= showcaseValue.url %>" target="_blank"><%= showcaseValue.title %></a>
         </h4>
-        <div class="showcase_info"><%= showcaseValue.showcaseInfo %></div>
+        <div class="showcase_info"><%= showcaseValue.info %></div>
     </div>
 </div>
